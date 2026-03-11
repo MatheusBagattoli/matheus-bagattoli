@@ -18,14 +18,37 @@
 
 public class SistemaEscolar {
 
-    private double notas;
-    private String nomeProfessor;
-    private String disciplina;
-    private String sala;
-    private int cargaHoraria;
+    private String nomeAluno;
+    private double mediaAluno;
 
+    public SistemaEscolar(String nomeAluno, double mediaAluno) {
+        this.nomeAluno = nomeAluno;
+        this.mediaAluno = mediaAluno;
+    }
 
+    public String getNomeAluno() {
+        return nomeAluno;
+    }
 
+    public void setNomeAluno(String nomeAluno) {
+        this.nomeAluno = nomeAluno;
+    }
+
+    public double getMediaAluno() {
+        return mediaAluno;
+    }
+
+    public void setMediaAluno(double mediaAluno) {
+        this.mediaAluno = mediaAluno;
+    }
+
+    public void verificarAprovacao(){
+        if(mediaAluno < 7){
+            throw new RuntimeException("Aluno está reprovado");
+        }else {
+            System.out.println("Aluno está aprovado");
+        }
+    }
 }
 
 
